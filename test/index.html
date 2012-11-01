@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js\jquery.js"></script>
+<script src="js\jmpress.js"></script>
+<link href="css\simple.css" rel="stylesheet" type="text/css" />
+
+<body>
+<div id="fb-root"></div>
+<script>
+  // Additional JS functions here
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '18386230986', // App ID
+      channelUrl : 'http://localhost/webapp/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional init code here
+
+  };
+
+  // Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+
+FB.getLoginStatus(function(response) {
+  if (response.status === 'connected') {
+    // connected
+  } else if (response.status === 'not_authorized') {
+    // not_authorized
+  } else {
+    // not_logged_in
+  }
+ });
+
+function login() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            // connected
+        } else {
+            // cancelled
+        }
+    });
+}
+
+// Additional init code here
+FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+        // connected
+    } else if (response.status === 'not_authorized') {
+        // not_authorized
+        login();
+    } else {
+        // not_logged_in
+        login();
+    }
+});
+
+ 
+ </script>
+
+ <iframe src="http://www.facebook.com/plugins/like.php?href=YOUR_URL"
+        scrolling="no" frameborder="0"
+        style="border:none; width:450px; height:80px"></iframe>
+ 
+<!--
+<div id="simple">
+	<div id="home" class="step">
+		<p>Hello! My name is jmpress.js...</p>
+	</div>
+	<div class="step" data-x="1000">
+		<p>and this is a really simple demo.</p>
+	</div>
+	<div class="step" data-x="2000">
+		<p>You might think it is boring...</p>
+	</div>
+	<div class="step" data-x="3000">
+		<p>but that is the point. This is a simple example.</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(function() {
+	$('#simple').jmpress();
+});
+</script>
+-->
+
+
+</body>
+
+</html> 
