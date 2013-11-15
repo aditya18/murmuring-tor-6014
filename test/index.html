@@ -67,12 +67,24 @@ FB.getLoginStatus(function(response) {
 
  
  </script>
-
+ 
+ <div id="fb-root"></div>
+      <script src="http://connect.facebook.net/en_US/all.js"></script>
+      <script>
+         FB.init({ 
+            appId:'18386230986', cookie:true, 
+            status:true, xfbml:true 
+         });
+      </script>
+      <fb:login-button>Login with Facebook</fb:login-button>
+	  
+	  
+<!--
  <iframe src="http://www.facebook.com/plugins/like.php?href=YOUR_URL"
         scrolling="no" frameborder="0"
         style="border:none; width:450px; height:80px"></iframe>
  
-<!--
+
 <div id="simple">
 	<div id="home" class="step">
 		<p>Hello! My name is jmpress.js...</p>
