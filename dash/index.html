@@ -17,6 +17,7 @@
  
     <link href="css/bootstrap.css" rel="stylesheet"> 
     <link href="css/starter-template.css" rel="stylesheet">
+	 <link href="css/search.css" rel="stylesheet"> 
 
 
   </head>
@@ -46,14 +47,25 @@
 
     <div class="container" id="search">
       <div class="starter-template">
-        <h1>Delta</h1>
-         <p class="lead">Search Asset details by Service Tag:</p>
-		<form method="post" action=assetdetails.html>		
-		Service tag <input type="text" name="STag">		
-		<input type="submit" value="Search!">		
-	</form>
+       <div class="form-style-5">
+		<form action=assetdetails.html>
+		<fieldset>
+		<legend>Search by Service Tag#</legend>
+		<input type="text" name="field1" placeholder="Service Tag#">
+		</fieldset>
+		<fieldset>
+		<legend>Search by Express Service Code#:</legend>
+		<input type="text" name="field2" placeholder="Express Service Code#">
+		</fieldset>
+		<input type="submit" value="Search" />
+		</form>
+	</div>
+	   
+	   
     </div>
 	  
+
+
 	  
 	
 	  
