@@ -15,7 +15,12 @@ $bday = $mon . $day . ".html";
 
 $base = "http://www.famousbirthdays.com/" . $bday;
 
-echo "Celebs Birthday! "	;
+echo "Celebs Birthday! NEW ";
+
+echo "it should work now...";
+
+
+
 /*
 // Retrieve the DOM from a given URL
 $html = file_get_html($url);
